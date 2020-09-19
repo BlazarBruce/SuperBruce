@@ -38,7 +38,19 @@ def login(request):
 
 def register(request):
     """网站注册功能"""
-    pass
+    if request.method == "POST":
+        user = request.POST.get('username')
+        pwd = request.POST.get('password')
+        email = request.POST.get('email')
+        name = request.POST.get('name')
+        phone = request.POST.get('tel')
+        gender = request.POST.get('gender')
+        birthday = request.POST.get('birthday')
+        # print(user,pwd,email,name,phone,gender,birthday) # 目前可以拿到前端纯回来发的数据
+        # ORM将数据插入数据库、并且返回登录界面
+
+
+    return render(request, 'register.html')
 
 def index(request):
     """网站的主界面"""
