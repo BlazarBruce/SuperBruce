@@ -25,12 +25,15 @@ def auth(func):
 def login(request):
     """网闸的登录界面"""
     if request.method == "POST":
-        user = request.POST.get('user')
-        pwd = request.POST.get('pwd')
-        obj = models.useInfo.objects.filter(username=user, password=pwd).first()
-        if obj:
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        # 因为用户的名称不允许相同、只需要取第一个就满足要求
+        user = models.useInfo.objects.filter(username=username, password=password).first()
+        if user:
             # 该用户已经注册
             # request.session['user_info'] = {'id': obj.id, 'name': obj.username, 'uid': obj.uid}
+            # 将用户信息封装到session中
+            request.session["user_id"] = user.id
             return redirect('/index/')
         else:
             # 该用户没有注册、返回注册界面
@@ -55,9 +58,10 @@ def register(request):
         user_list = models.useInfo.objects.filter(username=user)
         # 判断数据库是否存在改用户
         if user_list :
-                error_name = '%s用户名已经存在了' % user
-                return  render(request,'register.html')
-                # return  render(request,'register.html',{'error_name':error_name})
+            # 此处怎样将信息展现给前端用户？？？
+            error_name = '%s用户名已经存在了' % user
+            return  render(request,'register.html')
+            # return  render(request,'register.html',{'error_name':error_name})
         # 存储到数据库
         else:
             user = models.useInfo.objects.create(username=user,
@@ -78,5 +82,9 @@ def logout(request):
 
 def index(request):
     """网站的主界面"""
-    return render(request, 'index.html')
+    # 后端传递数据到前端
+    user_id = request.session.get("user_id")
+    user_obj = models.useInfo.objects.filter(id=user_id).first()
+
+    return render(request, "index.html", {"obj": user_obj})
 
