@@ -1,4 +1,5 @@
 import json
+# import auth
 from blog import models
 import functools
 import datetime
@@ -70,6 +71,10 @@ def register(request):
             user.save()
             return redirect('/login/')
     return render(request, 'register.html')
+
+# 注销界面
+def logout(request):
+    pass
 
 def index(request):
     """网站的主界面"""

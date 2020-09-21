@@ -2,10 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" type="image/x-icon" href="../static/img/favicon.ico" />
+    <title>测试界面</title>
     <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <meta name="keywords" content="SpuerBruce个人网站"/>
+    <meta name="description" content="SuperBruce是个人网站，利用Django框架进行开发的"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/zui/1.8.1/css/zui.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../static/img/favicon.ico" />
+    <script src="https://cdn.bootcss.com/zui/1.8.1/lib/jquery/jquery.js"></script>
+    <script src="https://cdn.bootcss.com/zui/1.8.1/js/zui.min.js"></script>
     <link rel="stylesheet" href="../static/css/style.css">
-    <title>index</title>
 </head>
 <body>
 <nav class="navbar navbar-inverse">
@@ -24,14 +30,14 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">博客 <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">技术文档</a></li>
+        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Link</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">网站新闻 <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">开发需求</a></li>
-            <li><a href="#">开发动态</a></li>
-            <li><a href="#">已完成功能</a></li>
+            <li><a href="/login/">登录</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#">Separated link</a></li>
             <li role="separator" class="divider"></li>
@@ -40,7 +46,7 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">用户名</a></li>
+        <li><a href="#">Link</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">个人中心 <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -55,7 +61,34 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<div class="row dh">
+
+<div id="content" data-customize="true" data-customtheme="true" class="default-bg">
+<div class="main-index">
+<div class="container content-box">
+	<section class="sousuo">
+	  <div class="search">
+		<div class="search-box">
+		  <img class="search-icon" src="../static/img/logo_4.jpg">
+		  <input type="text" id="txt" class="search-input" placeholder="善用搜索">
+		  <button class="search-btn visible-sm visible-md visible-lg" id="search-btn">搜索</button>
+		  <i class="search-clear icon icon-remove-sign" style="display: none;"></i>
+		</div>
+		<!-- 搜索热词 -->
+		<div class="box search-hot-text" id="box" style="display: none;">
+		  <ul></ul>
+		</div>
+		<!-- 搜索引擎 -->
+		<div class="search-engine" style="display: none;">
+		  <div class="search-engine-head">
+			<strong class="search-engine-tit">选择默认搜索引擎：</strong>
+			<div class="search-engine-tool">搜索热词： <span id="hot-btn" class="off"></span></div>
+		  </div>
+		  <ul class="search-engine-list">
+		  </ul>
+		</div>
+	  </div>
+	</section>
+		<div class="row dh">
 			<div class="col-sm-6 col-md-4 mb-3 dh">
 				<div class="row">
 					<div class="col-xs-12"><strong class="dhname" id="1">搜索 · 网页</strong></div>
@@ -92,7 +125,7 @@
 					</div>
 				</div>
 			</div>
-    <div class="col-sm-6 col-md-4 mb-3 dh">
+			<div class="col-sm-6 col-md-4 mb-3 dh">
 				<div class="row">
 					<div class="col-xs-12"><strong class="dhname" id="1">搜索 · 磁力</strong></div>
 <div class="col-xs-4 mb-2">
@@ -349,7 +382,17 @@
 		</div>
 </div>
 
-
+</div>
+</div>
+<footer class="footer text-center bg-white">
+    <div class="container">
+		<span id="hitokoto">:D 获取中...</span>
+    </div>
+</footer>
+<div id="get-top" title="回到顶部" style="display: none;"><i class="icon icon-arrow-up"></i></div>
+<script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+<script src="../static/js/js.js"></script>
+<script type="text/javascript" src="https://js.users.51.la/19916167.js"></script>
 
 <script src="../static/js/jquery-3.3.1.js"></script>
 <script src="../static/js/bootstrap.min.js"></script>
