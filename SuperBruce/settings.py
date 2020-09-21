@@ -45,7 +45,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    # 'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -141,10 +141,3 @@ STATIC_URL='/usr/project/www/Django/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
     ]  # 列表、可以配置多个静态文件路径
-
-# ############# 微信 ##############
-WECHAT_CONFIG = {
-    'app_id': 'wx89085e915d351cae',
-    'appsecret': '64f87abfc664f1d4f11d0ac98b24c42d',
-    'redirect_uri': 'http://47.98.134.86/callback/',
-}

@@ -1,11 +1,11 @@
 import json
-# import auth
 from blog import models
 import functools
 import datetime
 import requests
 from django.conf import settings
 from django.http import JsonResponse
+from django.contrib import auth # auth模块，可用于登录验证
 from django.shortcuts import render,redirect,HttpResponse
 
 # 初始展示界面
@@ -13,10 +13,10 @@ def hello(request):
         return render(request, 'welcome.html')
 
 # 校验用户是否登录的装饰器
-def auth(func):
+def is_auth(func):
     @functools.wraps(func)
     def inner(request, *args, **kwargs):
-        user_info = request.session.get('user_info')
+        user_info = request.session.get('user_id')
         if not user_info:
             return redirect('/login/')
         return func(request, *args, **kwargs)
@@ -40,6 +40,39 @@ def login(request):
             return render(request, 'register.html')
     else:
         return render(request, 'login.html')
+
+# 自己生成验证码的登录
+def logintest(request):
+    # if request.is_ajax():  # 如果是AJAX请求
+    if request.method == "POST":
+        # 初始化一个给AJAX返回的数据
+        ret = {"status": 0, "msg": ""}
+        # 从提交过来的数据中 取到用户名和密码
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+        valid_code = request.POST.get("valid_code")  # 获取用户填写的验证码
+
+        if valid_code and valid_code.upper() == request.session.get("valid_code", "").upper():
+        # if valid_code:
+            # 验证码正确
+            # 利用auth模块做用户名和密码的校验
+            user = models.useInfo.objects.filter(username=username, password=password).first()
+            if user:
+                # 用户名密码正确
+                # 给用户做登录
+                # auth.login(request, user)
+                ret["msg"] = "/index/"
+            else:
+                # 用户名密码错误
+                ret["status"] = 1
+                ret["msg"] = "用户名或密码错误！"
+        else:
+            ret["status"] = 1
+            ret["msg"] = "验证码错误"
+
+        return JsonResponse(ret)
+    return render(request, "logintest.html")
+
 
 def register(request):
     """网站注册功能"""
