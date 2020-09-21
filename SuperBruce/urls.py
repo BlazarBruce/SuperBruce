@@ -27,6 +27,6 @@ urlpatterns = [
         url(r'^index/$', views.index, name='index'),
 
 
-        url(r'^logintest/$', views.logintest, name='logintest'),  # 登录（验证用户输入）功能测试
+        # url(r'^logintest/$', views.logintest, name='logintest'),  # 登录（验证用户输入）功能测试
 
 ]

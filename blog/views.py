@@ -22,27 +22,27 @@ def is_auth(func):
         return func(request, *args, **kwargs)
     return inner
 
-def login(request):
-    """网闸的登录界面"""
-    if request.method == "POST":
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        # 因为用户的名称不允许相同、只需要取第一个就满足要求
-        user = models.useInfo.objects.filter(username=username, password=password).first()
-        if user:
-            # 该用户已经注册
-            # request.session['user_info'] = {'id': obj.id, 'name': obj.username, 'uid': obj.uid}
-            # 将用户信息封装到session中
-            request.session["user_id"] = user.id
-            return redirect('/index/')
-        else:
-            # 该用户没有注册、返回注册界面
-            return render(request, 'register.html')
-    else:
-        return render(request, 'login.html')
+# def login(request):
+#     """网闸的登录界面"""
+#     if request.method == "POST":
+#         username = request.POST.get('username')
+#         password = request.POST.get('password')
+#         # 因为用户的名称不允许相同、只需要取第一个就满足要求
+#         user = models.useInfo.objects.filter(username=username, password=password).first()
+#         if user:
+#             # 该用户已经注册
+#             # request.session['user_info'] = {'id': obj.id, 'name': obj.username, 'uid': obj.uid}
+#             # 将用户信息封装到session中
+#             request.session["user_id"] = user.id
+#             return redirect('/index/')
+#         else:
+#             # 该用户没有注册、返回注册界面
+#             return render(request, 'register.html')
+#     else:
+#         return render(request, 'login1.html')
 
 # 自己生成验证码的登录
-def logintest(request):
+def login(request):
     # if request.is_ajax():  # 如果是AJAX请求
     if request.method == "POST":
         # 初始化一个给AJAX返回的数据
@@ -52,8 +52,8 @@ def logintest(request):
         password = request.POST.get("password")
         valid_code = request.POST.get("valid_code")  # 获取用户填写的验证码
 
-        if valid_code and valid_code.upper() == request.session.get("valid_code", "").upper():
-        # if valid_code:
+        # if valid_code and valid_code.upper() == request.session.get("valid_code", "").upper():
+        if valid_code:
             # 验证码正确
             # 利用auth模块做用户名和密码的校验
             user = models.useInfo.objects.filter(username=username, password=password).first()
@@ -61,6 +61,7 @@ def logintest(request):
                 # 用户名密码正确
                 # 给用户做登录
                 # auth.login(request, user)
+                request.session["user_id"] = user.id
                 ret["msg"] = "/index/"
             else:
                 # 用户名密码错误
@@ -71,7 +72,7 @@ def logintest(request):
             ret["msg"] = "验证码错误"
 
         return JsonResponse(ret)
-    return render(request, "logintest.html")
+    return render(request, "login.html")
 
 
 def register(request):
