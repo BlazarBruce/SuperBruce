@@ -1,0 +1,101 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background: url("../img/bg.jpg") no-repeat center;
+}
+
+.rg_layout {
+    width: 900px;
+    height: 500px;
+    border: 8px solid #eeeeee;
+    background-color: white;
+    /* 让div水平居中 */
+    margin: auto;
+    margin-top: 15px;
+    /* padding: 15px; */
+}
+
+.rg_left {
+    /* border: 1px solid red; */
+    float: left;
+    margin: 15px;
+}
+
+.rg_left p:first-child {
+    color: #fed026;
+    size: 20px;
+}
+
+.rg_left p:last-child {
+    color: #a6a6a6;
+    size: 20px;
+}
+
+.rg_center {
+    width: 450px;
+
+    /* border: 1px solid red; */
+    float: left;
+}
+
+.rg_right {
+    /* border: 1px solid red; */
+    float: right;
+}
+
+.rg_right p:first-child {
+    /* color: #a6a6a6; */
+    font-size: 15px;
+}
+
+.rg_right p a {
+    color: pink;
+}
+
+.td_left {
+    width: 100px;
+    text-align: right;
+    height: 45px;
+    color: #a6a6a6;
+}
+
+.td_right {
+    padding-left: 50px;
+    color: #a6a6a6;
+}
+
+#username, #password, #email, #name, #tel, #birthday {
+    width: 251px;
+    height: 32px;
+    border: 1px solid #a6a6a6;
+    /* 设置边框圆角 */
+    border-radius: 5px;
+    padding-left: 10px;
+
+}
+
+#checkcode {
+    width: 150px;
+    height: 32px;
+    border: 1px solid #a6a6a6;
+    border-radius: 5px;
+    padding-left: 10px;
+
+}
+
+#img_check {
+    height: 32px;
+    /* 验证码图片垂直居中 */
+    vertical-align: middle;
+}
+
+#btn_sub {
+    width: 150px;
+    height: 40px;
+    background-color: #ffd026;
+    border: 1px solid #a6a6a6;
+}

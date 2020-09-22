@@ -7,6 +7,7 @@ from django.conf import settings
 from django.http import JsonResponse
 from django.contrib import auth # auth模块，可用于登录验证
 from django.shortcuts import render,redirect,HttpResponse
+from blog.forms import LoginForm, RegForm  # 登录/注册、数据验证表单
 
 # 初始展示界面
 def hello(request):
@@ -22,24 +23,6 @@ def is_auth(func):
         return func(request, *args, **kwargs)
     return inner
 
-# def login(request):
-#     """网闸的登录界面"""
-#     if request.method == "POST":
-#         username = request.POST.get('username')
-#         password = request.POST.get('password')
-#         # 因为用户的名称不允许相同、只需要取第一个就满足要求
-#         user = models.useInfo.objects.filter(username=username, password=password).first()
-#         if user:
-#             # 该用户已经注册
-#             # request.session['user_info'] = {'id': obj.id, 'name': obj.username, 'uid': obj.uid}
-#             # 将用户信息封装到session中
-#             request.session["user_id"] = user.id
-#             return redirect('/index/')
-#         else:
-#             # 该用户没有注册、返回注册界面
-#             return render(request, 'register.html')
-#     else:
-#         return render(request, 'login1.html')
 
 # 自己生成验证码的登录
 def login(request):
@@ -53,14 +36,13 @@ def login(request):
         valid_code = request.POST.get("valid_code")  # 获取用户填写的验证码
 
         # if valid_code and valid_code.upper() == request.session.get("valid_code", "").upper():
-        if valid_code:
+        # 目前只有一张验证码、先写死再程序中
+        if valid_code.upper() == "A134Z":
             # 验证码正确
             # 利用auth模块做用户名和密码的校验
             user = models.useInfo.objects.filter(username=username, password=password).first()
             if user:
-                # 用户名密码正确
-                # 给用户做登录
-                # auth.login(request, user)
+                # 登录成功将user_id添加到session中
                 request.session["user_id"] = user.id
                 ret["msg"] = "/index/"
             else:
@@ -114,6 +96,8 @@ def register(request):
 def logout(request):
     pass
 
+# 装饰器判断用户是否登录、登录后才可一进入导航界面
+@is_auth
 def index(request):
     """网站的主界面"""
     # 后端传递数据到前端
