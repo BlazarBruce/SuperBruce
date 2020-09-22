@@ -5,6 +5,53 @@ from blog import models
 from django import forms
 from django.core.exceptions import ValidationError
 
+# 定义一个登录的form类
+class LoginForm(forms.Form):
+    username = forms.CharField(
+        min_length=8,
+        label="用户名",
+        initial="张三",
+        error_messages={
+            "required": "不能为空",
+            "invalid": "格式错误",
+            "min_length": "用户名最短8位"
+        }
+    )
+    pwd = forms.CharField(min_length=6, label="密码")
+    gender = forms.fields.ChoiceField(
+        choices=((1, "男"), (2, "女"), (3, "保密")),
+        label="性别",
+        initial=3,
+        widget=forms.widgets.RadioSelect
+    )
+    # 单选
+    # hobby = forms.fields.ChoiceField(
+    #     choices=((1, "篮球"), (2, "足球"), (3, "双色球"),),
+    #     label="爱好",
+    #     initial=3,
+    #     widget=forms.widgets.Select
+    # )
+    # 多选
+    hobby = forms.fields.MultipleChoiceField(
+        choices=((1, "篮球"), (2, "足球"), (3, "双色球"),),
+        label="爱好",
+        initial=[1, 3],
+        widget=forms.widgets.SelectMultiple
+    )
+
+    keep = forms.fields.ChoiceField(
+        label="是否记住密码",
+        initial="checked",
+        widget=forms.widgets.CheckboxInput
+    )
+    # 多选checkbox
+    # hobby = forms.fields.MultipleChoiceField(
+    #     choices=((1, "篮球"), (2, "足球"), (3, "双色球"),),
+    #     label="爱好",
+    #     initial=[1, 3],
+    #     widget=forms.widgets.CheckboxSelectMultiple
+    # )
+
 
 # 定义一个注册的form类
 class RegForm(forms.Form):
@@ -26,7 +73,7 @@ class RegForm(forms.Form):
         label="密码",
         widget=forms.widgets.PasswordInput(
             attrs={"class": "form-control"},
-            render_value=True,
+            render_value=True, # 密码不正确，保留在输入框
         ),
         error_messages={
             "min_length": "密码至少要6位！",
