@@ -8,6 +8,7 @@ from django.http import JsonResponse
 from django.contrib import auth # auth模块，可用于登录验证
 from django.shortcuts import render,redirect,HttpResponse
 from blog.forms import LoginForm, RegForm  # 登录/注册、数据验证表单
+from django.views.decorators.csrf import csrf_exempt  # 先不做csrf验证
 
 # 初始展示界面
 def hello(request):
@@ -56,7 +57,7 @@ def login(request):
         return JsonResponse(ret)
     return render(request, "login.html")
 
-
+@csrf_exempt
 def register(request):
     """网站注册功能"""
     if request.method == "POST":
@@ -105,4 +106,9 @@ def index(request):
     user_obj = models.useInfo.objects.filter(id=user_id).first()
 
     return render(request, "index.html", {"obj": user_obj})
+
+#开发计划
+@is_auth
+def plan(request):
+    return render(request, "plan.html")
 

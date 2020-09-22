@@ -25,6 +25,7 @@ urlpatterns = [
         url(r'^logout/$', views.logout, name='logout'),
         url(r'^register/$', views.register, name='register'),
         url(r'^index/$', views.index, name='index'),
+        url(r'^plan/$', views.plan, name='plan'), # 开发计划
 
 
         # url(r'^logintest/$', views.logintest, name='logintest'),  # 登录（验证用户输入）功能测试
