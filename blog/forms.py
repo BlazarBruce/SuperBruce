@@ -53,7 +53,6 @@ class LoginForm(forms.Form):
             return self.cleaned_data
 
 
-
 # 注册的form类
 class RegForm(forms.Form):
     username = forms.CharField(
@@ -110,7 +109,7 @@ class RegForm(forms.Form):
     # 重写username字段的局部钩子
     def clean_username(self):
         username = self.cleaned_data.get("username")
-        is_exist = models.useInfo.objects.filter(username=username)
+        is_exist = models.UserInfo.objects.filter(username=username)
         if is_exist:
             # 表示用户名已注册
             self.add_error("username", ValidationError("用户名已存在"))
@@ -120,7 +119,7 @@ class RegForm(forms.Form):
     # 重写email字段的局部钩子
     def clean_email(self):
         email = self.cleaned_data.get("email")
-        is_exist = models.useInfo.objects.filter(email=email)
+        is_exist = models.UserInfo.objects.filter(email=email)
         if is_exist:
             # 表示邮箱已注册
             self.add_error("email", ValidationError("邮箱已被注册"))
@@ -135,3 +134,19 @@ class RegForm(forms.Form):
             self.add_error("re_password", ValidationError("两次密码不一致"))
         else:
             return self.cleaned_data
+
+class UserForm(forms.ModelForm):
+    class Meta:
+        model = models.UserInfo
+        fields=(
+            'name','password','gender',
+            'profession',
+            'email','qq','phone'
+        )
+
+    # 钩子函数
+    def clean_qq(self):
+        cleaned_data = self.cleaned_data.get("qq")
+        if not cleaned_data.isdigit():
+            return forms.ValidationError("必须是数字！")
+        return int(cleaned_data)

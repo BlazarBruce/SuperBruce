@@ -4,10 +4,12 @@ import functools
 import datetime
 import requests
 from django.conf import settings
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 from django.http import JsonResponse
 from django.contrib import auth # auth模块，可用于登录验证
 from django.shortcuts import render,redirect,HttpResponse
-from blog.forms import LoginForm, RegForm  # 登录/注册、数据验证表单
+from blog.forms import LoginForm, RegForm ,UserForm  # 登录/注册、数据验证表单
 from django.views.decorators.csrf import csrf_exempt  # 先不做csrf验证
 
 # 初始展示界面
@@ -41,7 +43,7 @@ def login(request):
         if valid_code.upper() == "A134Z":
             # 验证码正确
             # 利用auth模块做用户名和密码的校验
-            user = models.useInfo.objects.filter(username=username, password=password).first()
+            user = models.UserInfo.objects.filter(username=username, password=password).first()
             if user:
                 # 登录成功将user_id添加到session中
                 request.session["user_id"] = user.id
@@ -57,41 +59,25 @@ def login(request):
         return JsonResponse(ret)
     return render(request, "login.html")
 
-@csrf_exempt
+# @csrf_exempt
 def register(request):
     """网站注册功能"""
+    # students = Student.objects.all()
+    # 优化获取逻辑、使用类方法
+    users = models.UserInfo.get_all()
     if request.method == "POST":
-        # 获取前端传来的数据
-        user = request.POST.get('username')
-        pwd = request.POST.get('password')
-        email = request.POST.get('email')
-        name = request.POST.get('name')
-        phone = request.POST.get('tel')
-        gender = request.POST.get('gender')
-        birthday = request.POST.get('birthday')
-        # print(user,pwd,email,name,phone,gender,birthday) # 目前可以拿到前端纯回来发的数据
-        # ORM将数据插入数据库、并且返回登录界面
-        # 查询是否村子啊该用户
-        user_list = models.useInfo.objects.filter(username=user)
-        # 判断数据库是否存在改用户
-        if user_list :
-            # 此处怎样将信息展现给前端用户？？？
-            error_name = '%s用户名已经存在了' % user
-            return  render(request,'register.html')
-            # return  render(request,'register.html',{'error_name':error_name})
-        # 存储到数据库
-        else:
-            user = models.useInfo.objects.create(username=user,
-                                                 password=pwd,
-                                                 email=email,
-                                                 name=name,
-                                                 phone=phone,
-                                                 gender=gender,
-                                                 birthday=birthday,
-                                                 create_time=datetime.datetime.now())
-            user.save()
-            return redirect('/login/')
-    return render(request, 'register.html')
+        form = UserForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('index'))  # 反射跳转
+    else:
+        form = UserForm()
+    context = {
+        'students': users,
+        'form': form
+    }
+
+    return render(request, 'register.html', context=context)
 
 # 注销界面
 def logout(request):
@@ -103,7 +89,7 @@ def index(request):
     """网站的主界面"""
     # 后端传递数据到前端
     user_id = request.session.get("user_id")
-    user_obj = models.useInfo.objects.filter(id=user_id).first()
+    user_obj = models.UserInfo.objects.filter(id=user_id).first()
 
     return render(request, "index.html", {"obj": user_obj})
 
